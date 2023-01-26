@@ -1,0 +1,60 @@
+				*{
+					font-size: 18px;
+				}
+				header{
+					padding: 10px;
+					border: 1px solid gray;
+					background: white;
+				}
+				#whatisacapybara{
+					font-size: 30px;
+					color: white;
+				}
+				#article1{
+					text-align: right;
+				}
+				#logo{
+					opacity:1;
+					transition: 0.5s ease;
+				}
+				#logo:hover{
+					opacity:1;
+					transition: 0.5s ease;
+					width: 200px;
+					height: 200px;
+				}
+				#thecreator{
+					float: right;
+				}
+				#title{
+					position: relative;
+					font-size:60px;
+					float:right;
+					right: 800px;
+					bottom: 170px;
+					}
+				#section1{
+					display: flex;
+					padding: 20px;
+					background: #75B2B9 ;
+					
+				}
+				#sectionspace{
+					padding: 50px;
+				}
+				#section2{
+					display: flex;
+					padding: 20px;
+					background: #EB7B51;
+				}
+				#article4{
+					text-align: left;
+				}
+				#article5{
+					padding: 20px;
+				}
+				#sectionspace2{
+					padding: 50px;
+					background: #5AA44D;
+				}
+					
