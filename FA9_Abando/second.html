@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+	<html>	
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<header>
+			<button onclick="returnimage()">Return Image</button>
+			<button onclick="replaceimage()">Replace Image</button>
+		</header>
+		<article>
+			<img id="knifeuosama" src="knifeuosama.jpg" width="850px" height="772px">
+		</article>
+		<script>
+			function replaceimage(){
+			document.getElementById("knifeuosama").src = "nyeurosama.jpg";
+			}
+			function returnimage(){
+			document.getElementById("knifeuosama").src = "knifeuosama.jpg";
+			}
+		</script>
+	</html
