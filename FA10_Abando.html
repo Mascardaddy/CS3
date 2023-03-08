@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+	<html>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<body onload = "randomes()">
+			<p id="yes"></p>
+			<p id="no"></p>
+			<script>
+					function randomes(){
+					random = Math.floor(Math.random() * 1001);
+					document.getElementById("yes").innerHTML = "Randomly generated number: " + random;
+					var hundredsvar = random % 1000;
+					var tensvar = random % 100;
+					var onesvar = random % 10;
+					//I love you sir jimmu
+					var hundreds = hundredsvar - tensvar;
+					var tens = tensvar - onesvar;
+					if (random < 100){
+						hundredsvar = 0;
+						}
+					if (random < 10){
+						tensvar = 0;
+						}
+					document.getElementById("no").innerHTML = "Breakdown: " + hundreds + ", " + tens + ", " + onesvar;
+					}
+			</script>
+		</body>
+	</html>
