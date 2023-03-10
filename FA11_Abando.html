@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+	<html>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<body onload="determineTriangle(a,b,c)">
+		<p id="abc"></p>
+		<script>
+			var a = prompt("Input the length of side 1: ","");
+			var b = prompt("Input the length of side 2: ","");
+			var c = prompt("Input the length of side 3: ","");
+			function determineTriangle(a, b, c){
+				if (a == b && b == c){
+					alert("THE TRIANGLE IS EQUILATERAL");
+					}
+				else if ((a == b) || (b == c) || (a == c)){
+					alert("THE TRIANGLE IS ISOCELES");
+					}
+				else{
+					alert("THE TRIANGLE IS SCALENE");
+				}
+			}
+		</script>
+		</body>
+	</html>
