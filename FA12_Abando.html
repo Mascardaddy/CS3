@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+	<html>
+	<title>Multiplication Table</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		span{
+			display: inline-block;
+			font-weight: 500;
+			width: 20px;
+			border: 1px solid black;
+			padding: 1px;
+			margin: 3px;
+		}
+		#table {
+		border: 1px solid black;
+		}
+	</style>
+	<head>
+		<p>[enter a number between 2 and 10]</p>
+		<input type="number" id="ix"></input> 
+		<label for="y-input">by</label>
+		<input type="number" id="iy"></input>
+		<br> 
+		<br>
+		<button onclick="generatetable()">Click here when ready!</button>
+		<table id = "table"></table>
+		<script>
+			var content;
+			function generatetable(){
+			var x = document.getElementById("ix").value;
+			var y = document.getElementById("iy").value;
+			content = "";
+			if (x > 2 && x < 10 && y > 2 && y < 10){
+			for(var ix = 1 ; ix<=x; ix++){
+				for(var iy = 1; iy<=y; iy++){
+					content += "<span>" + (ix * iy).toString() + "</span>";
+					}
+					content += "<br>";
+					}
+					document.getElementById("table").innerHTML = content;
+					}
+				else{
+					alert("Please enter numbers between 2 and 10");
+				}
+			}
+		</script>
+		</head>
+	</html>
