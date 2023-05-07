@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" content="">
+		</head>
+	<script>
+		let aminoAcidArray = [];
+		let cdnArray = [];
+		let mRNA = prompt("Input mRNA sequence:");
+		let index = mRNA.indexOf("AUG");
+
+		if (index === -1) {
+        document.write("Codon(s) not found.");
+      } else {
+		let readingFrame = mRNA.slice(index);
+        let codon = "";
+        let i = 0;
+
+        while (i < readingFrame.length - 3) {
+          codon = readingFrame.slice(i, i + 3);
+          cdnArray.push(codon);
+          i += 3;
+        }
+
+        for (let i = 0; i < cdnArray.length; i++) {
+			let aminoacid = "";
+
+          switch (cdnArray[i]) {
+				case "UUU":
+				case "UUC":
+              aminoacid = "Phe";
+				break;
+				case "UUA":
+				case "UUG":
+				case "CUU":
+				case "CUC":
+				case "CUA":
+				case "CUG":
+              aminoacid = "Leu";
+				break;
+				case "AUU":
+				case "AUC":
+				case "AUA":
+              aminoacid = "Ile";
+				break;
+				case "AUG":
+              aminoacid = "Met";
+				break;
+				case "GUU":
+				case "GUC":
+				case "GUA":
+				case "GUG":
+              aminoacid = "Val";
+				break;
+				case "UCU":
+				case "UCC":
+				case "UCA":
+				case "UCG":
+              aminoacid = "Ser";
+				break;
+				case "CCU":
+				case "CCC":
+				case "CCA":
+				case "CCG":
+              aminoacid = "Pro";
+				break;
+				case "ACU":
+				case "ACC":
+				case "ACA":
+				case "ACG":
+              aminoacid = "Thr";
+				break;
+				case "GCU":
+				case "GCC":
+				case "GCA":
+				case "GCG":
+              aminoacid = "Ala";
+				break;
+				case "UAU":
+				case "UAC":
+              aminoacid = "Tyr";
+				break;
+				case "UGU":
+				case "UGC":
+              aminoacid = "Cys";
+				break;
+				case "UGG":
+              aminoacid = "Trp";
+				break;
+				case "UAA":
+				case "UAG":
+				case "UGA":
+              aminoacid = "STOP";
+				break;
+				default:
+			aminoacid = "Unknown";
+				break;
+          }
+          aminoAcidArray.push(aminoacid);
+        }
+            document.write("[" + cdnArray.map(codon => `"${codon}"`).join(", ") + "]<br>");
+            document.write("<br>" + aminoAcidArray.map((acid, index) => `${cdnArray[index]} --> ${acid}`).join("<br>") + "</p>");
+      }
+    </script>
+	</html>
