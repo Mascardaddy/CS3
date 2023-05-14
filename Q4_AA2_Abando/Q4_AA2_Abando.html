@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>SIGN UP NOW</title>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		</head>
+	<style>
+		body{
+			font-family: cursive;
+			background-image: url("roblox2.png");
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+
+		.input-field{
+			margin-bottom: 20px;
+		}
+		
+		#legend{
+			margin: auto;
+			margin-bottom: 20px;
+			font-weight: 1000px;
+			font-size: 50px;
+		}
+		
+		.success{
+			border: 2px solid green;
+		}
+		
+		.error{
+			border: 2px solid red;
+		}
+		
+		#output{
+			margin-top: 60px;
+			margin-left: 25%;
+			margin-right: 25%;
+			background-color: rgba(35, 37, 39, 1);
+			color: rgba(204, 205, 211, 1);
+		}
+		
+		fieldset{
+			margin-left: 25%;
+			margin-right: 25%;
+			background-color: rgba(35, 37, 39, 1);
+			color: rgba(204, 205, 211, 1);
+		}
+	</style>
+	<center>
+		<body>
+			<form id="signup-form">
+			<fieldset>
+			<legend id="legend">Sign-Up</legend>
+				<div class="input-field">
+        <label for="name">Name:</label>
+        <input type="text" id="name" onblur="validateInput(this)" onfocus="clearValidation(this)" required>
+				</div>
+				<div class="input-field">
+        <label for="nickname">Nickname:</label>
+        <input type="text" id="nickname" onblur="validateInput(this)" onfocus="clearValidation(this)" required>
+				</div>
+				<div class="input-field">
+        <label for="gender">Gender:</label>
+        <select id="gender" onblur="validateInput(this)" onfocus="clearValidation(this)" required>
+			<option value="male">Male</option>
+			<option value="female">Female</option>
+			<option value="prefer-not-to-mention">Prefer Not to Mention</option>
+        </select>
+				</div>
+				<div class="input-field">
+        <label for="password">Password:</label>
+        <input type="password" id="password" onblur="validateInput(this)" onfocus="clearValidation(this)" required>
+				</div>
+				<div class="input-field">
+        <label for="email">Email:</label>
+        <input type="email" id="email" onblur="validateInput(this)" onfocus="clearValidation(this)" required>
+				</div>
+				<div class="input-field">
+        <label for="address">Address:</label>
+        <input type="text" id="address" onblur="validateInput(this)" onfocus="clearValidation(this)" required>
+				</div>
+				<div class="input-field">
+        <label for="interests">Interests:</label>
+        <input id="interests" rows="4" onblur="validateInput(this)" onfocus="clearValidation(this)" required>
+				</div>
+				<div class="input-field">
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset" onclick="clearForm()">
+				</div>
+				</fieldset>
+			</form>
+		</center>
+	<script>
+			function validateInput(element){
+				if (element.value === ''){
+					element.classList.add('error');
+				}
+				else{
+					element.classList.remove('error');
+					element.classList.add('success');
+				}
+			}
+			function clearForm(){
+				var inputborder = document.getElementsByTagName("input");
+				
+					for (var i = 0; i < inputborder.length; i++) {
+					inputborder[i].style.border = "1px solid black";};
+				document.getElementById('signup-form').reset();
+				document.getElementById('output').innerHTML = '';
+			}
+			function clearValidation(element){
+				element.classList.remove('error');
+				element.classList.remove('success');
+			}
+			document.getElementById('signup-form').addEventListener('submit', function(event){
+			event.preventDefault();
+			
+				var name = document.getElementById('name').value;
+				var nickname = document.getElementById('nickname').value;
+				var gender = document.getElementById('gender').value;
+				var password = document.getElementById('password').value;
+				var email = document.getElementById('email').value;
+				var address = document.getElementById('address').value;
+				var interests = document.getElementById('interests').value;
+				var output = document.getElementById('output');
+			
+				output.innerHTML = '<h2>Sign-Up Information:</h2>';
+				output.innerHTML += '<p><strong>Name:</strong> ' + name + '</p>';
+				output.innerHTML += '<p><strong>Nickname:</strong> ' + nickname + '</p>';
+				output.innerHTML += '<p><strong>Gender:</strong> ' + gender + '</p>';
+				output.innerHTML += '<p><strong>Password:</strong> ' + password + '</p>';
+				output.innerHTML += '<p><strong>Email:</strong> ' + email + '</p>';
+				output.innerHTML += '<p><strong>Address:</strong> ' + address + '</p>';
+				output.innerHTML += '<p><strong>Interests:</strong> ' + interests + '</p>';
+			});
+	</script>
+    <div id="output"></div>
+		</body>
+	</html>
